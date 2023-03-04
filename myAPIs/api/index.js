@@ -5,13 +5,13 @@ const bodyParser = require("body-parser");
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 const express = require("express");
-const dotenv = require("dotenv");
+// const dotenv = require("dotenv");
 // const colors = require("colors");
 const cors = require("cors");
 // const { json } = require("body-parser");
 const { nanoid } = require("nanoid");
 
-dotenv.config({ path: "./config.env" });
+// dotenv.config({ path: "./config.env" });
 
 app.use(cors());
 app.use(bodyParser.json());
