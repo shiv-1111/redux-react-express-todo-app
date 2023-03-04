@@ -3,7 +3,9 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const getTodosAsync = createAsyncThunk(
   "todos/getTodosAsync",
   async () => {
-    const response = await fetch("http://localhost:7000/todos");
+    const response = await fetch(
+      "https://redux-react-express-todo-app-u8ok-3s0awj3vp-shiv-1111.vercel.app/todos"
+    );
     if (response.ok) {
       const todos = await response.json();
       return { todos };
@@ -14,13 +16,16 @@ export const getTodosAsync = createAsyncThunk(
 export const addTodoAsync = createAsyncThunk(
   "todos/addTodoAsync",
   async (payload) => {
-    const response = await fetch("http://localhost:7000/todos", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ title: payload.title }),
-    });
+    const response = await fetch(
+      "https://redux-react-express-todo-app-u8ok-3s0awj3vp-shiv-1111.vercel.app/todos",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ title: payload.title }),
+      }
+    );
 
     if (response.ok) {
       const todo = await response.json();
@@ -32,13 +37,16 @@ export const addTodoAsync = createAsyncThunk(
 export const toggleCompleteAsync = createAsyncThunk(
   "todos/toggleCompleteAsync",
   async (payload) => {
-    const response = await fetch(`http://localhost:7000/todos/${payload.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ completed: payload.completed }),
-    });
+    const response = await fetch(
+      `https://redux-react-express-todo-app-u8ok-3s0awj3vp-shiv-1111.vercel.app/todos/${payload.id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ completed: payload.completed }),
+      }
+    );
     if (response.ok) {
       const todo = await response.json();
       return { id: todo.id, completed: todo.completed };
@@ -49,12 +57,15 @@ export const toggleCompleteAsync = createAsyncThunk(
 export const deleteTodoAsync = createAsyncThunk(
   "todos/deleteTodoAsync",
   async (payload) => {
-    const response = await fetch(`http://localhost:7000/todos/${payload.id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      `https://redux-react-express-todo-app-u8ok-3s0awj3vp-shiv-1111.vercel.app/todos/${payload.id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     if (response.ok) {
       const todos = await response.json();
       return { todos };
