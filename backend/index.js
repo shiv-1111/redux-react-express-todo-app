@@ -15,23 +15,23 @@ app.use(json());
 let todos = [
   {
     id: nanoid(),
-    title: "Add todo by typing in the input box",
+    title: "Add todo by typing in the input box.",
     completed: false,
   },
   {
     id: nanoid(),
-    title: "Click on the checkbox to mark the task as done",
+    title: "Click on the checkbox to mark the task as done.",
     completed: true,
   },
   {
     id: nanoid(),
-    title: "Click the delete button to delete task",
+    title: "Click the delete button to delete task.",
     completed: false,
   },
   {
     id: nanoid(),
     title:
-      "Cool👌.. Now you are qualified enough to be the CEO of Mytodolist.pvt.ltd",
+      "Cool👌.. Now you are qualified enough to be the CEO of Mytodolist.pvt.ltd.",
     completed: false,
   },
 ];
