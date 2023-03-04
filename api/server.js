@@ -35,7 +35,7 @@ let todos = [
     completed: false,
   },
 ];
-
+app.get("/", (req, res) => res.send("hiii"));
 app.get("/todos", (req, res) => res.send(todos));
 
 app.post("/todos", (req, res) => {
@@ -64,6 +64,6 @@ app.delete("/todos/:id", (req, res) => {
   res.send(todos);
 });
 
-const PORT = 7000;
+const PORT = process.env.PORT || 7000;
 
 app.listen(PORT, console.log(`Server running on port ${PORT}`.green.bold));
